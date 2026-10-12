@@ -50,9 +50,8 @@
     "unicorn/no-await-expression-member": "off",
     "unicorn/no-empty-file": "error",
     "unicorn/no-new-array": "off",
-    "unicorn/no-null": "off"
-
-
+    "unicorn/no-null": "off",
+    "unicorn/no-negated-condition": "off"
   }
   // "overrides": [
   //   {
