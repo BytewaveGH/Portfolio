@@ -8,6 +8,7 @@ import heroDeveloper from '@/assets/images/hero-developer-clean.png'
 import aboutDeveloper from '@/assets/images/about-developer-clean.png'
 
 import Footer from '@/components/generals/layouts/footer'
+import { ArrowUpRight, Github, Linkedin } from 'lucide-react'
 
 const LandingPage = () => {
   return (
@@ -56,31 +57,31 @@ const LandingPage = () => {
             </div>
 
             {/* Social links */}
-            <div className="mt-7 flex justify-center gap-5 text-sm text-slate-400 lg:justify-start">
+            
+            <div className="mt-5 flex flex-wrap gap-3">
               <a
                 href="https://github.com/Lyondealpha-hub"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition hover:text-purple-400"
+                aria-label="GitHub profile"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-300 transition hover:border-purple-400/40 hover:bg-purple-500/10 hover:text-white"
               >
+                <Github size={17} />
                 GitHub
+                <ArrowUpRight size={14} />
               </a>
 
               <a
                 href="https://www.linkedin.com/in/misbahu-ahmed-4a5411278/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition hover:text-purple-400"
+                aria-label="LinkedIn profile"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-4 py-3 text-sm text-slate-300 transition hover:border-purple-400/40 hover:bg-purple-500/10 hover:text-white"
               >
+                <Linkedin size={17} />
                 LinkedIn
+                <ArrowUpRight size={14} />
               </a>
-
-              {/* <a
-                href="#"
-                className="transition hover:text-purple-400"
-              >
-                Instagram
-              </a> */}
             </div>
           </div>
 

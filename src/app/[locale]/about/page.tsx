@@ -26,7 +26,7 @@ const Page = () => {
       <section className="max-w-6xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Text Content */}
         <aside className="z-10">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center  md:text-left">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center text-white  md:text-left">
             LET ME <span className="text-purple-600">INTRODUCE</span> MYSELF
           </h2>
           <p className="text-slate-400 text-lg leading-relaxed">

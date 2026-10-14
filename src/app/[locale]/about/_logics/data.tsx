@@ -7,8 +7,12 @@ import js from '@/assets/images/js.png'
 import next from '@/assets/images/next.jpg'
 import node from '@/assets/images/nodejs.png'
 import mysql from '@/assets/images/mysql.png'
-import sql from '@/assets/images/sql-server.png'
+import sql from '@/assets/images/sql.png'
+import sqlite from '@/assets/images/sqlite.png'
 import postgres from '@/assets/images/postgre.png'
+import redis from '@/assets/images/redis.png'
+import firebase from '@/assets/images/firebase.png'
+import mango from '@/assets/images/mangodb.png'
 import { StaticImageData } from 'next/image'
 export const skillsets: {
   id: number
@@ -58,11 +62,11 @@ export const skillsets: {
     desc: [
       { id: 0, img: mysql, name: 'mysql' },
       { id: 1, img: sql, name: 'sql' },
-      { id: 2, img: sql, name: 'mongo' },
+      { id: 2, img: mango, name: 'mongo' },
       { id: 3, img: postgres, name: 'postgress' },
-      { id: 4, img: sql, name: 'firebase' },
-      { id: 5, img: sql, name: 'sqlite' },
-      { id: 6, img: sql, name: 'redis' },
+      { id: 4, img: firebase, name: 'firebase' },
+      { id: 5, img: sqlite, name: 'sqlite' },
+      { id: 6, img: redis, name: 'redis' },
     ],
   },
 ]

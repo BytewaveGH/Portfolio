@@ -90,7 +90,7 @@ const callouts = [
     id: 1,
     name: 'BidChale — Online Auction Marketplace',
     company: 'BidChale',
-    role: 'Founder & Full-Stack Developer',
+    role: 'Co-Founder & Full-Stack Developer',
     stack: 'Next.js · TypeScript · Golang · Fiber · MariaDB · Redis · Kafka · REST APIs · Vercel',
     description:
       'A competitive online auction marketplace built for Ghana, connecting vendors with buyers through time-bound auctions. BidChale enables vendors to list products, buyers to compete through live bidding, and successful transactions to progress through secure checkout and fulfillment workflows.',
