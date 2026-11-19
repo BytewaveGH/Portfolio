@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 // const callouts = [
 //   {
 //     id: 1,
@@ -117,27 +119,28 @@ const callouts = [
 
   {
     id: 2,
-    name: 'Sellix — Retail Operations & POS Platform',
+    name: 'Sellix — POS & Lightweight ERP for SMEs',
     company: 'Sellix',
     role: 'Founder & Full-Stack Developer',
-    stack: 'Next.js · TypeScript · Golang · REST APIs · SQL · Multi-Tenant Architecture · Vercel',
+    stack: 'Go · Fiber · ent · PostgreSQL · Redis · Next.js · TypeScript · Docker · nginx · JWT · IndexedDB · Service Workers',
     description:
-      'A retail operations and point-of-sale platform designed to help shops manage sales, products, and day-to-day business activities through a centralized digital workspace. Sellix focuses on practical retail workflows, including environments where manual selling processes or barcode scanning alone are not sufficient.',
-    imageSrc: 'https://via.placeholder.com/600x400',
-    imageAlt: 'Sellix Retail Operations and POS Platform',
-    href: '#',
-    demoHref: '#',
+      'A cloud platform that combines a point of sale with lightweight ERP modules for inventory, sales, costing and reporting. Sellix gives retail shops, restaurants, real-estate landlords and amusement venues one system for selling, stock, staff and reports, with tools tailored to each type of business on a shared multi-tenant platform.',
+    imageSrc: '/projects/sellix.png',
+    imageAlt: 'Sellix POS and Lightweight ERP Platform',
+    href: 'https://sellix.bidchale.com/en',
+    demoHref: 'https://sellix.bidchale.com/en',
     githubHref: 'https://github.com/Lyondealpha-hub',
     experience: [
-      'Founded and developed Sellix to simplify sales tracking and everyday retail operations for shops',
-      'Designed the application around practical retail workflows, including manual product selection and sales recording',
-      'Built the frontend using Next.js and TypeScript with reusable components and responsive layouts',
-      'Developed backend services and API integrations to support application workflows',
-      'Worked on a multi-tenant architecture to support separate shop environments and tenant-specific data',
-      'Designed the platform to accommodate retail operations where barcode scanning is unavailable, inconvenient, or insufficient',
-      'Worked on tenant setup, domain configuration, and deployment infrastructure',
-      'Focused on making retail workflows straightforward for shop owners and staff',
-      'Owned product planning, technical architecture, implementation, and ongoing development',
+      'Designed the system end to end and built the backend services and frontend, from data modelling and API design to deployment',
+      'Retail: POS with multi-unit products, barcode and camera-based product recognition, multi-warehouse stock, transfers, invoices and profit reports',
+      'Restaurants: menus with variants, extras, combos and timed promotions; a counter POS and online ordering storefront; recipe-based costing that deducts ingredients from stock automatically',
+      'Real estate: properties, tenants, leases, payments and maintenance, plus a public website for each landlord with booking requests',
+      'Offline-first tills that keep selling without internet and sync in the background with no duplicate sales, plus a desktop app on the same backend',
+      'Go (Fiber) microservices for the API gateway, accounts and billing, and business logic',
+      'Database-per-business isolation, with the business bound to the signed JWT and route guards checking each business’s enabled apps and the user’s role',
+      'Subscription limits enforced from a Redis snapshot for fast billing checks',
+      'nginx for subdomain routing and rate limiting, all services deployed with Docker, and integration tests in CI',
+      'Next.js for the web app, per-business storefronts and the desktop build',
     ],
   },
   {
@@ -150,8 +153,8 @@ const callouts = [
       'An enterprise ERP platform developed within the Seedstars ecosystem to support complex business operations and digital workflows. Contributed across frontend and backend development while designing a scalable codebase architecture, reusable component and template systems, and engineering standards optimized for large-scale team collaboration and future extensibility.',
     imageSrc: 'https://via.placeholder.com/600x400',
     imageAlt: 'SIGMA ERP — Seedstars',
-    href: '#',
-    demoHref: '#',
+    href: 'https://www.sigma.do',
+    demoHref: 'https://www.sigma.do',
     githubHref: 'https://github.com/Lyondealpha-hub',
     experience: [
       'Worked as a Frontend Consultant on the SIGMA ERP project through Ben-Meredith Consult',
@@ -269,10 +272,24 @@ const DemoComponent = () => {
                 <div className="relative w-full h-[500px] border border-purple-600 rounded-xl shadow-lg duration-1000 preserve-3d group-hover:my-rotate-y-180">
                   {/* FRONT */}
                   <div className="absolute inset-0 backface-hidden rounded-xl overflow-hidden bg-gray-900 text-white">
-                    <div className="h-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-purple-700 to-indigo-800 p-4 text-center gap-1">
-                      <p className="text-xs font-medium tracking-widest uppercase text-purple-200">{callout.role}</p>
-                      <h3 className="text-lg font-bold leading-tight">{callout.name}</h3>
-                      <p className="text-xs text-purple-200 mt-1">{callout.stack}</p>
+                    <div className="relative h-2/5 flex flex-col items-center justify-center bg-gradient-to-br from-purple-700 to-indigo-800 p-4 text-center gap-1">
+                      {callout.imageSrc.startsWith('/') && (
+                        <>
+                          <Image
+                            src={callout.imageSrc}
+                            alt={callout.imageAlt}
+                            fill
+                            sizes="(min-width: 1024px) 33vw, 100vw"
+                            className="object-cover object-left"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-br from-purple-900/80 to-indigo-950/75" />
+                        </>
+                      )}
+                      <div className="relative flex flex-col items-center gap-1 drop-shadow">
+                        <p className="text-xs font-medium tracking-widest uppercase text-purple-200">{callout.role}</p>
+                        <h3 className="text-lg font-bold leading-tight">{callout.name}</h3>
+                        <p className="text-xs text-purple-200 mt-1">{callout.stack}</p>
+                      </div>
                     </div>
                     <div className="p-4 flex flex-col gap-2">
                       <p className="text-sm text-gray-300 leading-relaxed">{callout.description}</p>
